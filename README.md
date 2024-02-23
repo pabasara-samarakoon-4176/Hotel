@@ -14,5 +14,16 @@ API - Insomnia
  
  HOME SCREEN
 ![Alt Text](./images/hotel.png)
+![Alt Text](./images/hotel2.png)
+![Alt Text](./images/hotel3.png)
+![Alt Text](./images/hotel11.png)
+![Alt Text](./images/hotel4.png)
+![Alt Text](./images/hotel5.png)
+![Alt Text](./images/hotel6.png)
 
+![Alt Text](./images/hotel7.png)
+![Alt Text](./images/hotel8.png)
+![Alt Text](./images/hotel9.png)
+
+![Alt Text](./images/hotel10.png)
 -[do npm start for both api and hotel]
