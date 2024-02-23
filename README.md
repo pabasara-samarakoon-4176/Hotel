@@ -27,3 +27,4 @@ API - Insomnia
 
 ![Alt Text](./images/hotel10.png)
 -[do npm start for both api and hotel]
+-MongoDB = https://cloud.mongodb.com/v2/652aa3c91fa2bc0a003612bc#/metrics/replicaSet/65d8683680d17177d598ca14/explorer/hotel
