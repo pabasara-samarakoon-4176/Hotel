@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t api-image ./api'
+                sh 'docker build -t api-image:v1.$BUILD_ID ./api'
                 sh 'docker tag api-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/api-image:v1.$BUILD_ID'
                 sh 'docker tag api-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/api-image:latest'
             }
