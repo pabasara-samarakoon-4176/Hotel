@@ -12,7 +12,7 @@ dotenv.config();
 
 const connect = async () => {
   try {
-    await mongoose.connect('mongodb://mongo_server_1:27017/hotel-db');
+    await mongoose.connect('mongodb://mongo_server:27017/hotel-db');
     console.log("Connected to mongoDB.");
   } catch (error) {
     throw error;
