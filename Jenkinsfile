@@ -16,14 +16,17 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t api-image ./api'
-                sh 'docker tag api-image:latest ${DOCKER_REGISTRY}/api-image:latest'
+                sh 'docker tag api-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/api-image:v1.$BUILD_ID'
+                sh 'docker tag api-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/api-image:latest'
             }
         }
         stage('Push Docker Images') {
             steps {
                withCredentials([usernamePassword(credentialsId: 'docker-login', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
                     sh 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD'
+                    sh 'docker push ${DOCKER_REGISTRY}/api-image:v1.$BUILD_ID'
                     sh 'docker push ${DOCKER_REGISTRY}/api-image:latest'
+                    sh 'docker image rmi api-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/api-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/api-image:latest'
                 }
             }
         }
