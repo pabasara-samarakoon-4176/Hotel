@@ -30,5 +30,13 @@ pipeline {
                 }
             }
         }
+        stage('Deploy with Ansible') {
+            steps {
+                sshagent(['ansible-ssh-key']) {
+                    sh 'cd /sourcecode'
+                    sh 'touch test'
+                }
+            }
+        }
     }
 }
