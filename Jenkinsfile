@@ -13,5 +13,15 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/pabasara-samarakoon-4176/Hotel.git'
             }
         }
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t ${DOCKER_REGISTRY}/${SERVER_IMAGE_NAME} ./server'
+            }
+        }
+        stage('Push Docker Images') {
+            steps {
+                sh 'docker push ${DOCKER_REGISTRY}/${SERVER_IMAGE_NAME}'
+            }
+        }
     }
 }
