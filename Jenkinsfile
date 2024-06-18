@@ -21,9 +21,10 @@ pipeline {
         }
         stage('Push Docker Images') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-login', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
+               withCredentials([usernamePassword(credentialsId: 'docker-login', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
                     sh 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD'
                     sh 'docker push ${DOCKER_REGISTRY}/api-image:latest'
+                }
             }
         }
     }
