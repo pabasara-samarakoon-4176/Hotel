@@ -19,7 +19,7 @@ pipeline {
                 sh 'docker tag api-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/api-image:v1.$BUILD_ID'
                 sh 'docker tag api-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/api-image:latest'
 
-                sh 'docker build -t hotel-image:v1.$BUILD_ID ./api'
+                sh 'docker build -t hotel-image:v1.$BUILD_ID ./hotel'
                 sh 'docker tag hotel-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/hotel-image:v1.$BUILD_ID'
                 sh 'docker tag hotel-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/hotel-image:latest'
             }
