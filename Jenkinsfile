@@ -21,6 +21,7 @@ pipeline {
         }
         stage('Push Docker Images') {
             steps {
+                sh 'docker login'
                 sh 'docker image push ${DOCKER_REGISTRY}/api-image:latest'
             }
         }
