@@ -33,8 +33,7 @@ pipeline {
         stage('Deploy with Ansible') {
             steps {
                 sshagent(['ansible-ssh-key']) {
-                    sh 'cd /sourcecode'
-                    sh 'touch test'
+                    sh 'ssh -o StrictHostKeyChecking=no root@172.31.0.29 "touch test"'
                 }
             }
         }
