@@ -15,13 +15,13 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'chmod 777 /var/run/docker.sock'
-                sh 'docker build -t ${DOCKER_REGISTRY}/${SERVER_IMAGE_NAME} ./server'
+                sh 'docker build -t api-image ./server'
+                sh 'docker tag api-image:latest ${DOCKER_REGISTRY}/api-image:latest'
             }
         }
         stage('Push Docker Images') {
             steps {
-                sh 'docker push ${DOCKER_REGISTRY}/${SERVER_IMAGE_NAME}'
+                sh 'docker push ${DOCKER_REGISTRY}/api-image:latest'
             }
         }
     }
