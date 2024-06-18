@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t api-image ./server'
+                sh 'docker build -t api-image ./api'
                 sh 'docker tag api-image:latest ${DOCKER_REGISTRY}/api-image:latest'
             }
         }
