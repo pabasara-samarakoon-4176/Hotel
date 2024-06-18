@@ -1,4 +1,4 @@
-import React, {useContext, useState, useRef, useEffect } from 'react';
+import React, { useContext, useState, useRef, useEffect } from 'react';
 import { faBed, faCalendarDays, faPerson } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
@@ -66,7 +66,7 @@ const Header = ({ type }) => {
 
   const handleSearch = () => {
     dispatch({ type: "NEW_SEARCH", payload: { RoomType, dates, options } });
-    
+
     navigate("/rooms", { state: { RoomType, dates, options } });
   };
 

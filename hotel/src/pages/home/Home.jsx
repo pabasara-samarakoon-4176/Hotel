@@ -39,14 +39,14 @@ const Home = () => {
         <About />
       </section>
       <section id="rooms">
-      <RoomDetails />
+        <RoomDetails />
       </section>
-      
+
       <section id="amenity">
         <Amenity />
       </section>
-      <Gallery/>
-      <Testimonials/>
+      <Gallery />
+      <Testimonials />
       <section id="contact">
         <MailList />
       </section>

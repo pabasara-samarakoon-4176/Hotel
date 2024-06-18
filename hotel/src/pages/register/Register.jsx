@@ -23,7 +23,7 @@ const Register = () => {
     e.preventDefault();
     dispatch({ type: "REGISTER_START" });
     try {
-      const res = await axios.post("/auth/register", formData);
+      const res = await axios.post("http://localhost:8800/api/auth/register", formData);
       dispatch({ type: "REGISTER_SUCCESS", payload: res.data.details });
       navigate("/login"); 
     } catch (err) {
