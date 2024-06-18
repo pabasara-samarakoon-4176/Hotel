@@ -31,6 +31,7 @@ pipeline {
                     sh 'docker push ${DOCKER_REGISTRY}/api-image:v1.$BUILD_ID'
                     sh 'docker push ${DOCKER_REGISTRY}/api-image:latest'
                     sh 'docker image rmi api-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/api-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/api-image:latest'
+                   
                     // sh 'docker push ${DOCKER_REGISTRY}/hotel-image:v1.$BUILD_ID'
                     // sh 'docker push ${DOCKER_REGISTRY}/hotel-image:latest'
                     // sh 'docker image rmi hotel-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/hotel-image:v1.$BUILD_ID ${DOCKER_REGISTRY}/hotel-image:latest'
