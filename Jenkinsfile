@@ -15,6 +15,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
+                sh 'chmod 777 /var/run/docker.sock'
                 sh 'docker build -t ${DOCKER_REGISTRY}/${SERVER_IMAGE_NAME} ./server'
             }
         }
