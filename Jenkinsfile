@@ -50,7 +50,7 @@ pipeline {
         stage('Deploy with Ansible') {
             steps {
                 sshagent(['ansible-ssh-key']) {
-                    sh 'ssh -o StrictHostKeyChecking=no root@172.31.0.29 "ansible-playbook -i /ansible/inventory.ini /ansible/playbook1.yml"'
+                    sh 'ssh -o StrictHostKeyChecking=no root@172.31.0.29 "ansible-playbook -i /ansible/inventory.ini /ansible/playbook2.yml"'
                 }
             }
         }
