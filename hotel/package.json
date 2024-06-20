@@ -46,5 +46,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://3.110.43.212:5001/api"
+  "proxy":"http://3.110.43.212:5001/api"
 }

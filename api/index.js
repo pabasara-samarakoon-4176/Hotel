@@ -10,6 +10,8 @@ import cors from "cors";
 const app = express();
 dotenv.config();
 
+const MONGO_URL = 'mongodb://mongo_server:27017/hotel-db' || 'mongodb://localhost:27017/hotel-db';
+
 const connect = async () => {
   try {
     await mongoose.connect('mongodb://mongo_server:27017/hotel-db');
