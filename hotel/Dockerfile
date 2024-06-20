@@ -2,7 +2,7 @@ FROM node:16-alpine
 
 WORKDIR /app/hotel
 
-COPY package.json .
+COPY package.json package-lock.json ./
 
 RUN npm install
 
