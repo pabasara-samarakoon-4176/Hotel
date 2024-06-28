@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="navContainer">
         <div className="horizontalItems">
           <img src={myImage} alt="" className="featuredImg" />
-          <span className="logo">GRAND HOTEL</span>
+          <span className="logo">GRAND HOTEL SRI LANKA</span>
           <div className="navItems">
           <Link to="/login"><button className="navButton">Login</button>
          </Link>
